@@ -1,0 +1,36 @@
+﻿<Window x:Class="cukraszda_wpf.ArlistaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Árlista"
+        Height="420" Width="420"
+        WindowStartupLocation="CenterOwner">
+
+    <DockPanel Margin="15">
+
+        <TextBlock DockPanel.Dock="Top"
+                   Text="ÁRLISTA"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   FontStyle="Italic"
+                   Foreground="DarkOrange"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,15"/>
+
+        <Button DockPanel.Dock="Bottom"
+                Content="RENDEL"
+                Width="100" Height="30"
+                Margin="0,15,0,0"
+                Click="Rendel_Click">
+            <Button.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Számlát kér" Click="SzamlatKer_Click"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="listaPanel"/>
+        </ScrollViewer>
+
+    </DockPanel>
+</Window>
